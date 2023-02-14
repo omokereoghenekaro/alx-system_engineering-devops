@@ -1,0 +1,18 @@
+#!/bin/bash
+
+readarray -t word_array < list
+
+declare -A word_counts
+
+# Count the number of occurrences of each word
+for word in "${word_array[@]}"; do
+  ((word_counts[$word]++))
+done
+
+# Print out the unique words
+echo "The following words appear exactly once:"
+for word in "${word_array[@]}"; do
+  if ((word_counts[$word] == 1)); then
+    echo $word
+  fi
+done
