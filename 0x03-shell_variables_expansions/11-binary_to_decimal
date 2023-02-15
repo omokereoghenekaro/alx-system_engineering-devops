@@ -1,2 +1,2 @@
 #!/bin/bash
-binary=BINARY; decimal=$((0)); i=$((0)); while [ $binary -ne 0 ]; do bit=$((binary & 1)); decimal=$((decimal + bit * 2**i)); binary=$((binary >> 1)); i=$((i + 1)); done; echo $decimal
+./converter
